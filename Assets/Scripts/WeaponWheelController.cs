@@ -15,6 +15,7 @@ public class WeaponWheelController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             weaponWheelSelected = !weaponWheelSelected;
+            Debug.Log("wheel toggled");
         }
 
         if (weaponWheelSelected)
