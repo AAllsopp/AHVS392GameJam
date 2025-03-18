@@ -27,7 +27,6 @@ public class WeaponWheelController : MonoBehaviour
             anim.SetBool("OpenWeaponWheel", false);
         }
 
-        Debug.Log(weaponID);
         switch (weaponID)
         {
             case 0:
@@ -35,7 +34,19 @@ public class WeaponWheelController : MonoBehaviour
                 break;
 
             case 1:
-                Debug.Log("first dress");
+                Debug.Log("purple");
+                break;
+            
+            case 2:
+                Debug.Log("blue short");
+                break;
+
+            case 3:
+                Debug.Log("blue poofy");
+                break;
+
+            case 4:
+                Debug.Log("red");
                 break;
         }
     }

@@ -8,8 +8,8 @@ public class WeaponWheelButtonController : MonoBehaviour
     private Animator anim;
     public Image selectedItem;
     private bool selected = false;
-    private bool hovered = false;
-    public Sprite icon;
+    // private bool hovered = false;
+    public Sprite selectIcon;
     public Sprite noImage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,15 +21,15 @@ public class WeaponWheelButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hovered)
-        {
-            selectedItem.sprite = icon;
-            Debug.Log("hover");
-        }
-        else 
-        {
-            selectedItem.sprite = noImage;
-        }
+        // if (hovered)
+        // {
+        //     selectedItem.sprite = icon;
+        //     Debug.Log("hover");
+        // }
+        // else 
+        // {
+        //     // selectedItem.sprite = noImage;
+        // }
 
         if (selected)
         {
@@ -54,14 +54,16 @@ public class WeaponWheelButtonController : MonoBehaviour
     public void HoverEnter()
     {
         anim.SetBool("Hover", true);
-        hovered = true;
+        selectedItem.sprite = selectIcon;
+        // hovered = true;
         // WeaponWheelController.weaponID = ID;
     }
 
     public void HoverExit()
     {
         anim.SetBool("Hover", false);
-        hovered = false;
+        selectedItem.sprite = noImage;
+        // hovered = false;
         // WeaponWheelController.weaponID = 0;
     }
 }
