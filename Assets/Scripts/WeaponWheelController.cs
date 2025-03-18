@@ -27,10 +27,11 @@ public class WeaponWheelController : MonoBehaviour
             anim.SetBool("OpenWeaponWheel", false);
         }
 
+        Debug.Log(weaponID);
         switch (weaponID)
         {
             case 0:
-                selectedItem.sprite = noImage;
+                // selectedItem.sprite = noImage;
                 break;
 
             case 1:

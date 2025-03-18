@@ -356,9 +356,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4225d16b41c54d543ae5ae5f03122231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  ID: 1
   selectedItem: {fileID: 658851846}
   icon: {fileID: -203879625793738308, guid: 1e231fddbc600704486f7727ba31a651, type: 3}
+  noImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &69694206
 MonoBehaviour:
   m_ObjectHideFlags: 0
