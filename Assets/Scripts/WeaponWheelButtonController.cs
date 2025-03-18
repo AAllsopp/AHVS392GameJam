@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class WeaponWheelButtonController : MonoBehaviour
 {
 
     public int ID;
     private Animator anim;
-    public string itemName;
     public Image selectedItem;
     private bool selected = false;
     private bool hovered = false;
@@ -25,10 +23,12 @@ public class WeaponWheelButtonController : MonoBehaviour
         if (hovered)
         {
             selectedItem.sprite = icon;
+            Debug.Log("hover");
         }
 
         if (selected)
         {
+            // selectedItem.sprite = icon;
             Debug.Log("selected item, something happen");
             selected = false;
         }
