@@ -27,18 +27,24 @@ public class CinematicTransitionManager : MonoBehaviour
         // Disable player input
         playerMovement.enabled = false;
 
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+
         // Auto-run player toward cinematicRunTarget
         float timer = 0f;
         while (timer < runDuration)
         {
             Vector2 dir = (cinematicRunTarget.position - player.transform.position).normalized;
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            rb = player.GetComponent<Rigidbody2D>();
             rb.MovePosition(rb.position + dir * playerMovement.moveSpeed*2 * Time.deltaTime);
 
             timer += Time.deltaTime;
             yield return null;
         }
-
+        // 🔒 Freeze Y movement and disable gravity
+        rb.gravityScale = 0f;
+        rb.linearVelocity = Vector2.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
+        
         // Fade out
         yield return StartCoroutine(Fade(1));
 
@@ -50,6 +56,10 @@ public class CinematicTransitionManager : MonoBehaviour
 
         // Re-enable player input
         playerMovement.enabled = true;
+        
+        // 🔓 Restore normal Rigidbody physics
+        rb.gravityScale = 1f; // Or whatever your default is
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private IEnumerator Fade(float targetAlpha)

@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 377304951}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.15, y: 1.4, z: 0.0096440585}
+  m_LocalPosition: {x: 20.15, y: 1.57, z: 0.0096440585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1170722003}
-  runDuration: 2
+  runDuration: 1
   fadeImage: {fileID: 559556368}
   cinematicRunTarget: {fileID: 377304952}
   newPlayerPosition: {fileID: 677309798}
