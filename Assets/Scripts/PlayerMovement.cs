@@ -28,6 +28,16 @@ public class PlayerMovement2D : MonoBehaviour
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
+        if (moveInput > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        } 
+        else if (moveInput < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        // Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
+
         // Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
