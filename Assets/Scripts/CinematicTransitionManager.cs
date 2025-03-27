@@ -50,6 +50,7 @@ public class CinematicTransitionManager : MonoBehaviour
 
         // Move player to new position
         player.transform.position = newPlayerPosition.position;
+        playerMovement.moveSpeed += 2;
 
         // Fade in
         yield return StartCoroutine(Fade(0));

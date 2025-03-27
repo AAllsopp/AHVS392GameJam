@@ -13,6 +13,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    public Animator animator;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
+        
         // Check if grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -31,10 +33,16 @@ public class PlayerMovement2D : MonoBehaviour
         if (moveInput > 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            animator.SetBool("isMoving", true);
         } 
         else if (moveInput < 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
         // Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
 
