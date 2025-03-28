@@ -6,7 +6,7 @@ using System.Linq;
 public class script : MonoBehaviour
 {
 
-    public bool IsFemaleToy = true;
+    public bool IsMaleToy = true;
     public float GlowIntensity = 0.8f;
     public bool GlowOn = false;
     Light2D glow;
@@ -19,18 +19,9 @@ public class script : MonoBehaviour
         glow = GetComponentInChildren<Light2D>();
         glow.intensity = GlowIntensity;
         glow.enabled = GlowOn;
-        glow.color = IsFemaleToy ? Color.magenta : Color.blue;
+        glow.color = IsMaleToy ? Color.blue : Color.magenta;
 
-        (IsFemaleToy ? femaleToyGlows : maleToyGlows).Add(glow);
-        // if (glow != null)
-        // {
-        //     Debug.Log("Light2D found: " + glow.name);
-        // }
-        // else
-        // {
-        //     Debug.LogError("No Light2D found in children!");
-        // }
-        
+        (IsMaleToy ? maleToyGlows : femaleToyGlows).Add(glow);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -38,23 +29,21 @@ public class script : MonoBehaviour
         // Debug.Log("object entered: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Player")) {
             glow.enabled = !glow.enabled;
-            if (IsFemaleToy) {
-                DisableMaleToyLights();
+            if (IsMaleToy) {
+                DisableFemaleToyLights();
             }
-            if (maleToyGlows.All(light => light.enabled) && femaleToyGlows.All(light => !light.enabled)) {
+            if (maleToyGlows.All(light => !light.enabled) && femaleToyGlows.All(light => light.enabled)) {
                 Debug.Log("You win!");
             }
         }
     }
 
 
-    private void DisableMaleToyLights()
+    private void DisableFemaleToyLights()
     {
-        foreach (Light2D maleGlow in maleToyGlows) {
-            maleGlow.enabled = false;
+        foreach (Light2D femaleGlow in femaleToyGlows) {
+            femaleGlow.enabled = false;
         }
-
-        Debug.Log("All male toy lights disabled!");
     }
 
     // Update is called once per frame
