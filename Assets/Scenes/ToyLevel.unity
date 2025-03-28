@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1762333877}
     m_Modifications:
+    - target: {fileID: 1977517598858128258, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
+      propertyPath: IsFemaleToy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2077742580455026842, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_Size.x
       value: 0.47265625
@@ -145,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.55787414
+      value: 3.578
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5984104
+      value: -2.878
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -289,11 +293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.350874
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2144103
+      value: -2.761
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -526,6 +530,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1762333877}
     m_Modifications:
+    - target: {fileID: 1977517598858128258, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
+      propertyPath: IsFemaleToy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2077742580455026842, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_Size.x
       value: 0.6347656
@@ -544,11 +552,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4898741
+      value: 7.062
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0794103
+      value: -2.551
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -824,6 +832,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1762333877}
     m_Modifications:
+    - target: {fileID: 1977517598858128258, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
+      propertyPath: IsFemaleToy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2077742580455026842, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_Size.x
       value: 0.8173828
@@ -842,11 +854,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.211126
+      value: -4.517
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7814105
+      value: -3.216
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1205,11 +1217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.804874
+      value: -0.113
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3454103
+      value: -2.908
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1726,6 +1738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1762333877}
     m_Modifications:
+    - target: {fileID: 1977517598858128258, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
+      propertyPath: IsFemaleToy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2077742580455026842, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_Size.x
       value: 6.75
@@ -1744,11 +1760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.169126
+      value: 8.188
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3764102
+      value: -3.414
       objectReference: {fileID: 0}
     - target: {fileID: 6111369530425614927, guid: c1f691a3ab9a9a44f8d14c2e60bd153a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1899,6 +1915,14 @@ PrefabInstance:
     - target: {fileID: 5601212205268418110, guid: c2838dd7c12fd5c4c8386faca79e9e0b, type: 3}
       propertyPath: m_Name
       value: ToyLevelPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601212205268418110, guid: c2838dd7c12fd5c4c8386faca79e9e0b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855159918217184299, guid: c2838dd7c12fd5c4c8386faca79e9e0b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
