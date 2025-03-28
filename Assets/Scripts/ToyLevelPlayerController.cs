@@ -4,22 +4,22 @@ using UnityEngine.InputSystem;
 public class TopLevelPlayerController : MonoBehaviour
 {
     public InputAction MoveAction;
-    public float Speed = 0.01f;
+    public float Speed = 1.0f;
+    Rigidbody2D rigidbody2d;
+    Vector2 move;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         MoveAction.Enable();
-        
+        rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 move = MoveAction.ReadValue<Vector2>();
+        move = MoveAction.ReadValue<Vector2>();
         Debug.Log(move);
-        Vector2 position = (Vector2)transform.position + move * Speed * Time.deltaTime;
-        transform.position = position;
 
 
 
@@ -39,5 +39,11 @@ public class TopLevelPlayerController : MonoBehaviour
         //     horizontal = 1.0f;
         // }
         // Debug.Log(horizontal);
+    }
+
+    void FixedUpdate()
+    {
+        Vector2 position = (Vector2)rigidbody2d.position + move * Speed * Time.deltaTime;
+        rigidbody2d.MovePosition(position);
     }
 }

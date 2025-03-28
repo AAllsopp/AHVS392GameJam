@@ -151,7 +151,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
-  Speed: 0.1
+  Speed: 1
 --- !u!50 &5340547438579476911
 Rigidbody2D:
   serializedVersion: 5
@@ -178,7 +178,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6855159918217184299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -213,15 +213,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.073694065, y: -0.22855839}
+  m_Offset: {x: -0.13883606, y: -0.71475637}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.49121094, y: 0.8125}
+    oldSize: {x: 0.9824219, y: 1.625}
     newSize: {x: 0.49121094, y: 0.8125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.17293802, y: 0.35538322}
+  m_Size: {x: 0.17363095, y: 0.17246747}
   m_EdgeRadius: 0
