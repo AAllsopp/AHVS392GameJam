@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 9059e1849e3d693468442173a3e8cb8a
+guid: d95c048d25529b043915c53303b721f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8389994423820866332
-    second: tacky_0
+      213: 2384409602951248912
+    second: pngimg.com - dress_PNG138_0
+  - first:
+      213: 3419989627217181209
+    second: pngimg.com - dress_PNG138_1
+  - first:
+      213: 6712712045006656843
+    second: pngimg.com - dress_PNG138_2
+  - first:
+      213: 335011448198875060
+    second: pngimg.com - dress_PNG138_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tacky_0
+      name: pngimg.com - dress_PNG138_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 960
-        height: 540
+        x: 43
+        y: 45
+        width: 915
+        height: 923
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c13d953f97f3f6470800000000000000
-      internalID: 8389994423820866332
+      spriteID: 01c70f696ef171120800000000000000
+      internalID: 2384409602951248912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngimg.com - dress_PNG138_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 287
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91afcc1327e367f20800000000000000
+      internalID: 3419989627217181209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngimg.com - dress_PNG138_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 260
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b459b1a1a08582d50800000000000000
+      internalID: 6712712045006656843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngimg.com - dress_PNG138_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7459d132336a400800000000000000
+      internalID: 335011448198875060
       vertices: []
       indices: 
       edges: []
@@ -160,8 +235,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      tacky_0: 8389994423820866332
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wedding_0: -7186520227292662463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

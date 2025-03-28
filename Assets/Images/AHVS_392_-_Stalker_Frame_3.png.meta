@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AHVS_392_-_Stalker_Frame_3_0: -6151021548300273177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
