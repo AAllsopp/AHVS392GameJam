@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class TopLevelPlayerController : MonoBehaviour
 {
@@ -7,38 +8,38 @@ public class TopLevelPlayerController : MonoBehaviour
     public float Speed = 1.0f;
     Rigidbody2D rigidbody2d;
     Vector2 move;
+    SpriteRenderer spriteRenderer;
+    Light2D[] eyes;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        eyes = GetComponentsInChildren<Light2D>();
+        Debug.Log("Number of eyes: " + eyes.Length);
     }
 
     // Update is called once per frame
     void Update()
     {
         move = MoveAction.ReadValue<Vector2>();
-        // Debug.Log(move);
+        if (move.x != 0) {
+            bool oldFlipX = spriteRenderer.flipX;
 
+            spriteRenderer.flipX = move.x > 0;
+            bool newFlipX = spriteRenderer.flipX;
 
-
-        // float horizontal = 0.0f;
-        // Vector2 position = transform.position;
-        // position.x = position.x + 0.1f;
-        // Vector2 position = transform.position; // Cast transform.position to Vector2
-        // if (LeftAction.IsPressed()) {
-        //     position.x -= Speed;  // Move left on the X-axis
-        // }
-        // transform.position = position;
-        // position.x += 0.1f;  // Move right on the X-axis
-        // transform.position = new Vector3(position.x, position.y, transform.position.z);
-        // if (Keyboard.current.leftArrowKey.isPressed) {
-        //     horizontal = -1.0f;
-        // } else if (Keyboard.current.rightArrowKey.isPressed) {
-        //     horizontal = 1.0f;
-        // }
-        // Debug.Log(horizontal);
+            if (oldFlipX != newFlipX) {
+                foreach (Light2D eye in eyes) {
+                    eye.transform.localPosition = new Vector3(
+                    eye.transform.localPosition.x * -1,
+                    eye.transform.localPosition.y,
+                    eye.transform.localPosition.z);
+                }
+            }
+        }
     }
 
     void FixedUpdate()
