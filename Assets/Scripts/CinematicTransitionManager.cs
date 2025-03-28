@@ -42,6 +42,15 @@ public class CinematicTransitionManager : MonoBehaviour
 
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
+        var transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+
+        // Add high damping and dead zones so camera doesn't move
+        transposer.m_YDamping = 100f;
+        transposer.m_DeadZoneHeight = 100f;
+        transposer.m_DeadZoneWidth = 100f;
+        
+        // Vector3 playerScale = player.transform.localScale;
+
         // Auto-run player toward cinematicRunTarget
         float timer = 0f;
         while (timer < runDuration)
@@ -49,7 +58,7 @@ public class CinematicTransitionManager : MonoBehaviour
             Vector2 dir = (cinematicRunTarget.position - player.transform.position).normalized;
             rb = player.GetComponent<Rigidbody2D>();
             rb.MovePosition(rb.position + dir * playerMovement.moveSpeed*2 * Time.deltaTime);
-
+            // player.transform.localScale -= new Vector3(0.002f, 0.002f, 0.002f);
             timer += Time.deltaTime;
             yield return null;
         }
@@ -61,8 +70,6 @@ public class CinematicTransitionManager : MonoBehaviour
         // Fade out
         yield return StartCoroutine(Fade(1));
 
-        var transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-
         // Disable damping and dead zones for snappy camera follow
         transposer.m_YDamping = 0f;
         transposer.m_DeadZoneHeight = 0f;
@@ -71,10 +78,11 @@ public class CinematicTransitionManager : MonoBehaviour
         // Move player to new position
         player.transform.position = newPlayerPosition.position;
         playerMovement.moveSpeed += 1f;
+        // player.transform.localScale = playerScale;
 
         chasePlayer.recheckDir();
-        badGuy.transform.position = new Vector2(newPlayerPosition.position.x + -chasePlayer.dir * 25, newPlayerPosition.position.y + 1);
-        chasePlayer.moveSpeed += 1.2f;
+        badGuy.transform.position = new Vector2(newPlayerPosition.position.x + -chasePlayer.dir * 15, newPlayerPosition.position.y + 1);
+        chasePlayer.moveSpeed *= 1.3f;
 
         Vector3 cameraTargetPosition = player.transform.position + (Vector3)transposer.m_TrackedObjectOffset;
         Vector3 cameraDelta = cameraTargetPosition - virtualCamera.transform.position;
@@ -97,6 +105,10 @@ public class CinematicTransitionManager : MonoBehaviour
         // 🔓 Restore normal Rigidbody physics
         rb.gravityScale = 1f; // Or whatever your default is
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        Debug.Log("Player: " + playerMovement.moveSpeed);
+        Debug.Log("Bad Guy: " + chasePlayer.moveSpeed);
+        Debug.Log("---");
     }
 
     private IEnumerator Fade(float targetAlpha)

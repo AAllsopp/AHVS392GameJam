@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
@@ -6,6 +7,7 @@ public class ChasePlayer : MonoBehaviour
     public float moveSpeed;
     private Rigidbody2D rb;
     public float dir;
+    private int sceneIter;
 
     void Start()
     {
@@ -20,25 +22,33 @@ public class ChasePlayer : MonoBehaviour
         }
         Debug.Log(dir);
 
-        moveSpeed = 2f;
+        moveSpeed = 2.5f;
+        sceneIter = 1;
 
     }
 
     public void recheckDir()
     {
-        float oldDir = dir;
-        if (Player.position.x - transform.position.x > 0)
+        sceneIter ++;
+
+        if (sceneIter == 3)
         {
-            dir = -1;
-        }
-        else
-        {
-            dir = 1;
-        }
-        if (dir != oldDir)
-        {
+            dir *= -1;
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
+        // float oldDir = dir;
+        // if (Player.position.x - transform.position.x > 0)
+        // {
+        //     dir = -1;
+        // }
+        // else
+        // {
+        //     dir = 1;
+        // }
+        // if (dir != oldDir)
+        // {
+        //     transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        // }
     }
     void Update()
     {
