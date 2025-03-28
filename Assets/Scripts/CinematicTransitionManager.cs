@@ -23,6 +23,7 @@ public class CinematicTransitionManager : MonoBehaviour
     void Start()
     {
         playerMovement = player.GetComponent<PlayerMovement2D>();
+        chasePlayer = badGuy.GetComponent<ChasePlayer>();
 
         var transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         originalYDamping = transposer.m_YDamping;
@@ -69,10 +70,11 @@ public class CinematicTransitionManager : MonoBehaviour
 
         // Move player to new position
         player.transform.position = newPlayerPosition.position;
-        playerMovement.moveSpeed += 1;
+        playerMovement.moveSpeed += 1f;
 
-        badGuy.transform.position = new Vector2(newPlayerPosition.position.x - 20, newPlayerPosition.position.y + 1);
-        // chasePlayer.moveSpeed += 1;
+        chasePlayer.recheckDir();
+        badGuy.transform.position = new Vector2(newPlayerPosition.position.x + -chasePlayer.dir * 25, newPlayerPosition.position.y + 1);
+        chasePlayer.moveSpeed += 1.2f;
 
         Vector3 cameraTargetPosition = player.transform.position + (Vector3)transposer.m_TrackedObjectOffset;
         Vector3 cameraDelta = cameraTargetPosition - virtualCamera.transform.position;

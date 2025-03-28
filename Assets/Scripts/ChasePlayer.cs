@@ -3,9 +3,9 @@ using UnityEngine;
 public class ChasePlayer : MonoBehaviour
 {
     public Transform Player;
-    public float moveSpeed = 2f;
+    public float moveSpeed;
     private Rigidbody2D rb;
-    private float dir;
+    public float dir;
 
     void Start()
     {
@@ -18,7 +18,27 @@ public class ChasePlayer : MonoBehaviour
         {
             dir = -1;
         }
+        Debug.Log(dir);
 
+        moveSpeed = 2f;
+
+    }
+
+    public void recheckDir()
+    {
+        float oldDir = dir;
+        if (Player.position.x - transform.position.x > 0)
+        {
+            dir = -1;
+        }
+        else
+        {
+            dir = 1;
+        }
+        if (dir != oldDir)
+        {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
     }
     void Update()
     {
