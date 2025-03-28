@@ -160,7 +160,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pngimg.com - dress_PNG138_0: 2384409602951248912
+      pngimg.com - dress_PNG138_1: 3419989627217181209
+      pngimg.com - dress_PNG138_2: 6712712045006656843
+      pngimg.com - dress_PNG138_3: 335011448198875060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
