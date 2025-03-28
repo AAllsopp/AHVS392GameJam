@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement2D : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     public float jumpForce = 10f;
 
     [Header("Ground Check")]
@@ -18,7 +18,7 @@ public class PlayerMovement2D : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        moveSpeed = 4;
+        moveSpeed = 3f;
     }
 
     void Update()

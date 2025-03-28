@@ -1,20 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Cinemachine;
 
 public class CinematicTransitionManager : MonoBehaviour
 {
     public GameObject player;
+    public GameObject badGuy;
     public float runDuration = 2f;
     public Image fadeImage; // Full-screen UI image for fade
     public Transform cinematicRunTarget; // Point to run toward
     public Transform newPlayerPosition; // Where to teleport the player after fade
 
     private PlayerMovement2D playerMovement; // <-- Replace with your actual movement script name
+    private ChasePlayer chasePlayer;
+    public CinemachineVirtualCamera virtualCamera;
+
+    // Backup original camera values
+    private float originalYDamping;
+    private Vector2 originalDeadZone;
 
     void Start()
     {
-        playerMovement = player.GetComponent<PlayerMovement2D>(); // <-- Again, use your script's class name here
+        playerMovement = player.GetComponent<PlayerMovement2D>();
+
+        var transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        originalYDamping = transposer.m_YDamping;
+        originalDeadZone = new Vector2(transposer.m_DeadZoneWidth, transposer.m_DeadZoneHeight);
     }
 
     public void StartCinematicTransition()
@@ -48,15 +60,37 @@ public class CinematicTransitionManager : MonoBehaviour
         // Fade out
         yield return StartCoroutine(Fade(1));
 
+        var transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+
+        // Disable damping and dead zones for snappy camera follow
+        transposer.m_YDamping = 0f;
+        transposer.m_DeadZoneHeight = 0f;
+        transposer.m_DeadZoneWidth = 0f;
+
         // Move player to new position
         player.transform.position = newPlayerPosition.position;
-        playerMovement.moveSpeed += 2;
+        playerMovement.moveSpeed += 1;
+
+        badGuy.transform.position = new Vector2(newPlayerPosition.position.x - 20, newPlayerPosition.position.y + 1);
+        // chasePlayer.moveSpeed += 1;
+
+        Vector3 cameraTargetPosition = player.transform.position + (Vector3)transposer.m_TrackedObjectOffset;
+        Vector3 cameraDelta = cameraTargetPosition - virtualCamera.transform.position;
+
+        virtualCamera.OnTargetObjectWarped(player.transform, cameraDelta);
+
+
+        // Restore camera settings
+        transposer.m_YDamping = originalYDamping;
+        transposer.m_DeadZoneHeight = originalDeadZone.y;
+        transposer.m_DeadZoneWidth = originalDeadZone.x;
+
+        // Re-enable player input
+        playerMovement.enabled = true;
 
         // Fade in
         yield return StartCoroutine(Fade(0));
 
-        // Re-enable player input
-        playerMovement.enabled = true;
         
         // 🔓 Restore normal Rigidbody physics
         rb.gravityScale = 1f; // Or whatever your default is

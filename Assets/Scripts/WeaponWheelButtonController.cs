@@ -100,7 +100,7 @@ public class WeaponWheelButtonController : MonoBehaviour
     }
 
 
-    private IEnumerator FadeIn(Image image, Sprite newSprite, float duration = 0.1f)
+    private IEnumerator FadeIn(Image image, Sprite newSprite, float duration = 0.25f)
     {
         Debug.Log("start fade in");
         image.sprite = newSprite;
