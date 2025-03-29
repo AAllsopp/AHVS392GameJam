@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement2D : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     public float jumpForce = 10f;
 
     [Header("Ground Check")]
@@ -13,20 +13,39 @@ public class PlayerMovement2D : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    public Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        moveSpeed = 3f;
     }
 
     void Update()
     {
+        
         // Check if grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         // Horizontal movement
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        if (moveInput > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            animator.SetBool("isMoving", true);
+        } 
+        else if (moveInput < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+        // Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
 
         // Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
