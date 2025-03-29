@@ -87,7 +87,7 @@ public class CinematicTransitionManager : MonoBehaviour
         // player.transform.localScale = playerScale;
 
         chasePlayer.recheckDir();
-        badGuy.transform.position = new Vector2(newPlayerPosition.position.x + -chasePlayer.dir * 15, newPlayerPosition.position.y + 1);
+        badGuy.transform.position = new Vector2(newPlayerPosition.position.x + -chasePlayer.dir * 18, newPlayerPosition.position.y + 1);
         chasePlayer.moveSpeed *= 1.3f;
 
         Vector3 cameraTargetPosition = player.transform.position + (Vector3)transposer.m_TrackedObjectOffset;
