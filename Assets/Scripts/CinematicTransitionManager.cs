@@ -30,6 +30,12 @@ public class CinematicTransitionManager : MonoBehaviour
         originalDeadZone = new Vector2(transposer.m_DeadZoneWidth, transposer.m_DeadZoneHeight);
     }
 
+    public void TurnDirection()
+    {
+        chasePlayer.flipDir();
+        badGuy.transform.position = new Vector2(player.transform.position.x + -chasePlayer.dir * 15, player.transform.position.y + 1);
+    }
+
     public void StartCinematicTransition()
     {
         StartCoroutine(CinematicSequence());

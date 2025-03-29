@@ -47,5 +47,8 @@ TagManager:
   - name: GameObjects
     uniqueID: 728569185
     locked: 0
+  - name: Lamps
+    uniqueID: 1763825439
+    locked: 0
   m_RenderingLayers:
   - Default

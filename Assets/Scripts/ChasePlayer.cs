@@ -36,19 +36,19 @@ public class ChasePlayer : MonoBehaviour
             dir *= -1;
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
-        // float oldDir = dir;
-        // if (Player.position.x - transform.position.x > 0)
-        // {
-        //     dir = -1;
-        // }
-        // else
-        // {
-        //     dir = 1;
-        // }
-        // if (dir != oldDir)
-        // {
-        //     transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        // }
+        else if (sceneIter == 4)
+        {
+            dir *= -1;
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        
+    }
+
+    public void flipDir()
+    {
+        
+        dir *= -1;
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
     void Update()
     {
